@@ -9,6 +9,7 @@
       
     $page=basename($_SERVER['PHP_SELF']);
     
+    //
     switch ($page)
      {
         case 'category.php':
