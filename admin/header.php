@@ -75,6 +75,9 @@
                             <?php
                                     }
                             ?>
+                            <li>
+                                <a href="setting.php">Setting</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
