@@ -72,12 +72,13 @@
                             <li>
                                 <a href="users.php">Users</a>
                             </li>
-                            <?php
-                                    }
-                            ?>
                             <li>
                                 <a href="setting.php">Setting</a>
                             </li>
+                            <?php
+                                    }
+                            ?>
+                           
                         </ul>
                     </div>
                 </div>
