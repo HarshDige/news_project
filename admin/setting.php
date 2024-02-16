@@ -30,12 +30,12 @@
           <form action="update-setting.php" method="POST" enctype="multipart/form-data" autocomplete="off">
                 
                 <div class="form-group">
-                      <label for="exampleInputTile">Wensite Name</label>
-                      <input type="text" name="post_title"  class="form-control" id="exampleInputUsername" value="<?php echo $data['websitename']; ?>">
+                      <label for="exampleInputTile">Website Name</label>
+                      <input type="text" name="website_name"  class="form-control" id="exampleInputUsername" value="<?php echo $data['websitename']; ?>">
                   </div>
             <div class="form-group">
                   <label for="exampleInputPassword1">Footer Description</label>
-                  <textarea name="postdesc" class="form-control"  required rows="5">
+                  <textarea name="footer" class="form-control"  required rows="5">
                               <?php echo $data['footerdesc']; ?>
                         </textarea>
                   </div>
@@ -47,7 +47,7 @@
                         <input type="file" id="new" name="new-image" >
                         
                         <img  src="./images/<?php echo $data['logo']; ?>" id="image" height="100px">
-                        <input type="hidden"  name="old-image" value="<?php echo $data['websitename']; ?>">
+                        <input type="hidden"  name="old-image" value="<?php echo $data['logo']; ?>">
                   </div>
                   
                   

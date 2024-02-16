@@ -2,6 +2,12 @@
     session_start();
     $author=$_SESSION['author'];
 
+  
+
+    if(isset($_POST['submit']))
+    {
+
+        
     if(empty($_FILES['new-image']['name']))
     {
         $newfilename=$_POST['old-image'];    
@@ -11,8 +17,8 @@
     }
     else
     {
-        echo "<pre>";
-        print_r($_FILES['new-image']);
+        // echo "<pre>";
+        // print_r($_FILES['new-image']);
 
         $errors=array();
 
@@ -22,7 +28,7 @@
         $error=$_FILES['new-image']['error'];
         $size=($_FILES['new-image']['size'])/1024;
 
-        echo $size;
+        // echo $size;
         $nameext=explode(".",$name);
         $ext=strtolower(end($nameext));
 
@@ -60,10 +66,7 @@
     
     }
 
-  
 
-    if(isset($_POST['submit']))
-    {
         $pid=mysqli_real_escape_string($conn,$_POST['post_id']);
         
         $title=mysqli_real_escape_string($conn,$_POST['post_title']);
