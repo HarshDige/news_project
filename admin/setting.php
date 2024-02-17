@@ -66,7 +66,7 @@
     </div>
   </div>
 </div>
-<!-- 
+
 <script>
                
 
@@ -75,12 +75,12 @@
                        
 
                 input.addEventListener("change", () => {
-                    image.src = URL.createObjectURL(input.files[0]);
+                    image.src =URL.createObjectURL(input.files[0]);
                 });
                    
                
 </script>    
- -->
+
 
 <?php include "footer.php"; 
         }

@@ -29,6 +29,7 @@
 
     </head>
     <body>
+        
         <!-- HEADER -->
         <div id="header-admin">
             <!-- container -->
@@ -36,9 +37,18 @@
                 <!-- row -->
                 <div class="row">
                     <!-- LOGO -->
+                    <?php
+                        $query="SELECT * FROM `setting`";
+                        $result=mysqli_query($conn,$query);
+
+                       $data=mysqli_fetch_assoc($result);
+
+                            
+                            ?>
                     <div class="col-md-2">
-                        <a href="post.php"><img class="logo" src="images/news.jpg"></a>
+                        <a href="post.php"><img class="logo" src="images/<?php echo $data['logo']; ?>"></a>
                     </div>
+                     
                     <!-- /LOGO -->
                       <!-- LOGO-Out -->
               
