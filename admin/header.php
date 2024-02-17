@@ -50,7 +50,7 @@
 
                             if($data['logo'] == '')
                             {
-                                echo "<a href='post.php'><img class='logo' src='images/". $data['logo']."'></a>";
+                                echo "<a href='post.php'><h1>". $data['websitename'] ."</h1></a>";
                             }
                             else
                             {

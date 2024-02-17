@@ -1,8 +1,17 @@
+<?php
+                        $query="SELECT * FROM `setting`";
+                        $result=mysqli_query($conn,$query);
+
+                       $data=mysqli_fetch_assoc($result);
+
+                            
+                            ?>
+
 <div id ="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <span>© Copyright 2019 News | Powered by <a href="http://www.yahoobaba.net/">Yahoo Baba</a></span>
+            <span><?php echo $data['footerdesc']?></span>
             </div>
         </div>
     </div>

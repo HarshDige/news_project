@@ -117,7 +117,23 @@
         <div class="row">
             <!-- LOGO -->
             <div class=" col-md-offset-4 col-md-4">
-                <a href="index.php" id="logo"><img src="images/news.jpg"></a>
+            <?php
+                        $query="SELECT * FROM `setting`";
+                        $result=mysqli_query($conn,$query);
+
+                       $data=mysqli_fetch_assoc($result);
+
+
+                if($data['logo'] == '')
+                {
+                    echo "<a href='post.php'>".$data['websitename'] ."</a>";
+                }
+                else
+                {
+
+                    echo "<a href='index.php' id='logo'><img src='admin/images/". $data['logo']."'></a>";
+                }
+                ?>
             </div>
             <!-- /LOGO -->
         </div>
