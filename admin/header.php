@@ -46,7 +46,18 @@
                             
                             ?>
                     <div class="col-md-2">
-                        <a href="post.php"><img class="logo" src="images/<?php echo $data['logo']; ?>"></a>
+                        <?php
+
+                            if($data['logo'] == '')
+                            {
+                                echo "<a href='post.php'><img class='logo' src='images/". $data['logo']."'></a>";
+                            }
+                            else
+                            {
+
+                                echo "<a href='post.php'><img class='logo' src='images/". $data['logo']."'></a>";
+                            }
+                        ?>
                     </div>
                      
                     <!-- /LOGO -->
