@@ -1,18 +1,22 @@
 <?php include "header.php"; 
     require_once "conn.php";
 
+    // session_start();
+      if($_SESSION['userrole'] == 0)
+      {
+        $id=$_GET['id'];   
+        $query ="SELECT `author` FROM `post` WHERE `post_id`=$id";
+        $result = mysqli_query($conn,$query );   
+        
+        $aut=mysqli_fetch_assoc($result);
 
-    if(isset($_GET['id']))
-    {
-    
-     $id=$_GET['id'];   
-     $sql ="SELECT * FROM `post` WHERE `post_id`=$id";
-     $res = mysqli_query($conn,$sql);   
-     
-        if(mysqli_num_rows($res)>0)
+
+        if($_SESSION['author'] != $aut['author'])
         {
-            $data=mysqli_fetch_assoc($res);
-            
+            header("Location:".$host."/admin/post.php");
+        }
+
+      }
             
 
           
@@ -25,6 +29,21 @@
     <div class="col-md-12">
         <h1 class="admin-heading">Update Post</h1>
     </div>
+
+    <?php
+             if(isset($_GET['id']))
+             {
+             
+              $id=$_GET['id'];   
+              $sql ="SELECT * FROM `post` WHERE `post_id`=$id";
+              $res = mysqli_query($conn,$sql);   
+              
+                 if(mysqli_num_rows($res)>0)
+                 {
+                     $data=mysqli_fetch_assoc($res);
+                  
+
+    ?>
     <div class="col-md-offset-3 col-md-6">
         <!-- Form for show edit-->
         <form action="save-update-post.php" method="POST" enctype="multipart/form-data" autocomplete="off">

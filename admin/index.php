@@ -67,7 +67,24 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-offset-4 col-md-4">
-                        <img class="logo" src="images/news.jpg">
+                    <?php
+                        $query="SELECT * FROM `setting`";
+                        $result=mysqli_query($conn,$query);
+
+                       $data=mysqli_fetch_assoc($result);
+
+
+                        if($data['logo'] == '')
+                        {
+                            echo "<h1>".$data['websitename'] ."</h1>";
+                        }
+                        else
+                        {
+
+                            echo "<img src='images/". $data['logo']."'>";
+                        }
+                        ?>
+                        <!-- <img class="logo" src="images/news.jpg"> -->
                         <h3 class="heading">Admin</h3>
                         <!-- Form Start -->
                         <form  action="<?php  $_SERVER['PHP_SELF'];?>" method ="POST">

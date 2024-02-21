@@ -48,7 +48,7 @@
                         }      
                         else if($_SESSION['userrole']==0)
                         {
-                            $query ="SELECT * FROM `post` WHERE `author`='$qut' ORDER BY `post_id` DESC  ";
+                            $query ="SELECT * FROM `post` WHERE `author`='$qut' ORDER BY `post_id` DESC LIMIT $offset,$limit ";
                         }  
 
                          $result=mysqli_query($conn,$query) or die("Query Failed");
@@ -69,7 +69,7 @@
                               <td><?php echo $data['category'];?></td>
                               <td><?php echo $data['post_date'];?></td>
                               <td><?php echo $data['author'];?></td>
-                              <td class='edit'><a href='update-post.php?id="<?php echo $data['post_id']; ?>"'><i class='fa fa-edit'></i></a></td>
+                              <td class='edit'><a href='update-post.php?id=<?php echo $data['post_id']; ?>'><i class='fa fa-edit'></i></a></td>
                               <td class='delete'><a href='javascript:void(0)' id="check" onclick="checkdelete(<?php echo $data['post_id'] ?>)"><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <?php
